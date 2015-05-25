@@ -14,6 +14,7 @@ public class MyPrivateArmy extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
+		System.out.print("witam");
 	}
 
 	@Override
