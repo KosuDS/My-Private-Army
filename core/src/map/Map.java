@@ -22,6 +22,14 @@ public class Map {
 		tilesBox.add(id, tile);
 	}
 	
+	public void removeTile(int id){
+		tilesBox.remove(id);
+	}
+	
+	public Tile getTile(int id){
+		return tilesBox.get(id);
+	}
+	
 	public void addLayer(Layer layer, int index){
 		//Dodaj now¹ wartwê która jest przekazywana przez argument do listy layerBox na dan¹ pozycjê
 		layersBox.add(index, layer);
