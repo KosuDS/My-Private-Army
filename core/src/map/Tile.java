@@ -1,5 +1,5 @@
 package map;
 
-public class Tile { // kafelka
+public class Tile { 
 
 }
