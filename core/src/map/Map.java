@@ -8,18 +8,18 @@ public class Map {
 	private int width, height;
 	
 	private ArrayList<Layer> layersBox;
-	private HashMap<Integer, Tile> tilesBox;
+	private ArrayList<Tile> tilesBox;
 	
 	public Map(int width, int height){
 		this.width = width;
 		this.height = height;
 		
 		layersBox = new ArrayList<Layer>();
-		tilesBox = new HashMap<Integer, Tile>();
+		tilesBox = new ArrayList<Tile>();
 	}
 	
 	public void addNewTile(int id, Tile tile){
-		tilesBox.put(id, tile);
+		tilesBox.add(id, tile);
 	}
 	
 	public void addLayer(Layer layer, int index){
