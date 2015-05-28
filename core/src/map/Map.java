@@ -18,7 +18,7 @@ public class Map {
 		tilesBox = new ArrayList<Tile>();
 	}
 	
-	public void addNewTile(int id, Tile tile){
+	public void addTile(int id, Tile tile){
 		tilesBox.add(id, tile);
 	}
 	
@@ -31,20 +31,15 @@ public class Map {
 	}
 	
 	public void addLayer(Layer layer, int index){
-		//Dodaj now¹ wartwê która jest przekazywana przez argument do listy layerBox na dan¹ pozycjê
 		layersBox.add(index, layer);
 	}
 	
-	
 	public void removeLayer(int index){
-		//Usuwa warstwe z danej pozycji z listy layerBox
 		layersBox.remove(index);
 		
 	}
 	
 	public Layer getLayer(int index){
 		return layersBox.get(index);
-		//Zwraca wartwê z danej pozycji
-		
 	}
 }

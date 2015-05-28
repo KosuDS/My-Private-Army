@@ -8,7 +8,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Layer {
 	
-	private int width, height;
+	private int width, height, lenght;
 	private Vector2 position;
 	
 	private int[] tiles;
@@ -19,23 +19,40 @@ public class Layer {
 		this.height = height;
 		this.position = position;
 		
-		tiles = new int[width * height];
+		lenght = width * height;
+		tiles = new int[lenght];
 	}
 	
 	public void addTile(int x, int y, int tileId){
-		//Dodaj kafelka do pozycji x, y
-		tiles[TableHelper.flatPosition(width, x, y)] = tileId;
+		if (TableHelper.isInside(width, height, x, y)){
+			tiles[TableHelper.flatPosition(width, x, y)] = tileId;
+		}
 	}
 	
 	public void removeTile(int x, int y){
-		//Usuñ kafelka z pozycji x, y
-		tiles[TableHelper.flatPosition(width, x, y)] = -1;
+		if (TableHelper.isInside(width, height, x, y)){
+			tiles[TableHelper.flatPosition(width, x, y)] = -1;
+		}
 	}
 	
 	public int getTile(int x, int y){
-		//Wyci¹gnij kafelka z pozycji x, y i go zwróæ
-		return tiles[TableHelper.flatPosition(width, x, y)];
+		return TableHelper.isInside(width, height, x, y) ? tiles[TableHelper.flatPosition(width, x, y)] : -1;
 	}
 	
+	public int getTile(int index){
+		return tiles[index];
+	}
+	
+	public int getWidth(){
+		return width;
+	}
+	
+	public int getHeight(){
+		return height;
+	}
+	
+	public Vector2 getPosition(){
+		return position;
+	}
 	
 }
