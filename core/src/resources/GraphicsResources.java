@@ -21,25 +21,10 @@ public class GraphicsResources {
 	public void splitTextures(int width, int height){
 		int widthTexture = tileSet.getWidth();
 		int heightTexture = tileSet.getHeight();
-		
-		int widthCount = widthTexture / width;
-		int heightCount = heightTexture / height;
-		
-		tilesTexture.add(new TextureRegion(tileSet, 0, 0, 64, 64));
-		tilesTexture.add(new TextureRegion(tileSet, 64, 0, 64, 64));
-		tilesTexture.add(new TextureRegion(tileSet, 128, 0, 64, 64));
-		
-		tilesTexture.add(new TextureRegion(tileSet, 0, 64, 64, 64));
-		tilesTexture.add(new TextureRegion(tileSet, 64, 64, 64, 64));
-		tilesTexture.add(new TextureRegion(tileSet, 128, 64, 64, 64));
-		
-		tilesTexture.add(new TextureRegion(tileSet, 0, 128, 64, 64));
-		tilesTexture.add(new TextureRegion(tileSet, 64, 128, 64, 64));
-		tilesTexture.add(new TextureRegion(tileSet, 128, 128, 64, 64));
-		
-		for (int row = 0; row < width; row++) {
-			for (int column = 0; column < height; column++) {
-				tilesTexture.add(new TextureRegion(tileSet, row, column, widthCount, heightCount)); //?
+
+		for (int row = 0; row < heightTexture - 1; row +=height) {
+			for (int column = 0; column < widthTexture - 1; column += width) {
+				tilesTexture.add(new TextureRegion(tileSet, column, row, width, height));
 				
 			}
 		} 
