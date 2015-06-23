@@ -37,6 +37,11 @@ public class GraphicsResources {
 		tilesTexture.add(new TextureRegion(tileSet, 64, 128, 64, 64));
 		tilesTexture.add(new TextureRegion(tileSet, 128, 128, 64, 64));
 		
-
+		for (int row = 0; row < width; row++) {
+			for (int column = 0; column < height; column++) {
+				tilesTexture.add(new TextureRegion(tileSet, row, column, widthCount, heightCount)); //?
+				
+			}
+		} 
 	}
 }
