@@ -18,6 +18,7 @@ public class Running implements Screen {
     private FPSLogger fpsLogger;
     private BitmapFont font;
     
+    
     public Running(MyPrivateArmy mainGame){
              this.mainGame = mainGame;
     }
@@ -30,6 +31,7 @@ public class Running implements Screen {
 		font = new BitmapFont();
 		
 		camera.setToOrtho(false, 800, 600);
+	
 	}
 
 	@Override
@@ -41,7 +43,7 @@ public class Running implements Screen {
         batch.setProjectionMatrix(camera.combined);
 
         batch.begin();
-        font.draw(batch, "NO ELO", 100, 150);
+        font.draw(batch, "PODOBA SIE? :D", Gdx.input.getX(), Gdx.input.getY());
         batch.end();
         
         fpsLogger.log();
@@ -71,5 +73,7 @@ public class Running implements Screen {
 	public void dispose() {
 
 	}
+	
+	
 
 }
